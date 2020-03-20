@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".RecuperarContraseñaActivity">
 
     <ImageView
         android:id="@+id/logotipo"
@@ -34,49 +34,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="15"
-        android:hint="@string/pass"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="159dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/btn_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPass" />
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/btn_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
-
     <Button
         android:id="@+id/btn_newPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="@string/btn_newPass"
+        android:text="@string/btn_enviar_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_register" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
