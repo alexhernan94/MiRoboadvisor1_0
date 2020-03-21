@@ -1,5 +1,8 @@
 package com.example.miroboadvisor1_0;
 
+import android.content.Context;
+import android.content.Intent;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,51 +17,49 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.concurrent.Executor;
+
+import static androidx.core.content.ContextCompat.startActivity;
+
 public class Autenticaciones{
 
 
     private static final String TAG = "Autenticaciones";
-    //private static final int RC_SIGN_IN = 9001;
 
     private EditText txtEmail;
     private EditText txtPass;
     private Button btnLogin;
-    private Button btnRegister;
-    private Button btnForgotPass;
 
-    //private String email = txtEmail.getText().toString();
-   // private String password = txtPass.getText().toString();
+    private boolean estado;
 
     private FirebaseAuth mAuth;
 
-
-
-
-/*
-    private void LoginEmail(){
+    public void LoginEmail(String email, String password, final Context context){
         mAuth = FirebaseAuth.getInstance();
 
         mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            startActivity(context);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
                         }
+                    }
+                    private void startActivity(Context context) {
+                        Intent intent = new Intent(context, PrincipalActivity.class);
+                        intent.putExtra("sub1","chemistry");
+                        context.startActivity(intent);
                     }
                 });
     }
 
-    private void RegistroEmail(){
+/*
+    public void RegistroEmail(){
         mAuth = FirebaseAuth.getInstance();
 
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -75,7 +76,6 @@ public class Autenticaciones{
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
                         }
                     }
                 });

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btnRegister;
     private Button btnForgotPass;
 
-    private String email = "";
-    private String password = "";
 
     Autenticaciones a = new Autenticaciones();
 
@@ -42,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btn_login);
         btnRegister = (Button) findViewById(R.id.btn_register);
         btnForgotPass = (Button) findViewById(R.id.btn_newPass);
-
-
+/*
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -56,11 +54,28 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+ */
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //a.LoginEmail();
-                startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
+
+                String email = txtEmail.getText().toString();
+                String password = txtPass.getText().toString();
+
+                if (!TextUtils.isEmpty(txtEmail.getText()) && !TextUtils.isEmpty(txtPass.getText())){
+
+                    a.LoginEmail(email, password, getApplicationContext());
+
+                    if ( mAuth.getCurrentUser() != null){
+                        txtEmail.setText("");
+                        txtPass.setText("");
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(MainActivity.this, "Datos vacios", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -79,5 +94,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, RecuperarContraseñaActivity.class));
             }
         });
+    }
+
+    public void onBackPressed(){
+        mAuth.signOut();
     }
 }
