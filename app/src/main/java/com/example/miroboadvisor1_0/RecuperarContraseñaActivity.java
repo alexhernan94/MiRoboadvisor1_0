@@ -2,6 +2,7 @@ package com.example.miroboadvisor1_0;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -44,5 +45,9 @@ public class RecuperarContraseñaActivity extends AppCompatActivity {
                 Toast.makeText(getApplication(), "Email enviado correctamente", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void onBackPressed(){
+        startActivity(new Intent(RecuperarContraseñaActivity.this, MainActivity.class));
     }
 }

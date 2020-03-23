@@ -2,6 +2,7 @@ package com.example.miroboadvisor1_0;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -108,5 +109,9 @@ public class RegistroActivity extends AppCompatActivity {
         datosUsuario.put("Contraseña", contraseña);
 
         myRef.setValue(datosUsuario);
+    }
+
+    public void onBackPressed(){
+        startActivity(new Intent(RegistroActivity.this, MainActivity.class));
     }
 }
