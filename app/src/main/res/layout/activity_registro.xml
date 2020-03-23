@@ -8,162 +8,164 @@
     android:orientation="vertical"
     tools:context=".RegistroActivity">
 
-    <EditText
-        android:id="@+id/editText6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginTop="24dp"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText8"
-        tools:layout_editor_absoluteX="99dp" />
+        android:text="FORMULARIO DE REGISTRO"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextDni"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText11"
-        tools:layout_editor_absoluteX="99dp" />
-
-    <EditText
-        android:id="@+id/editText7"
+        android:hint="DNI o NIE"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
-        tools:layout_editor_absoluteX="99dp" />
-
-    <EditText
-        android:id="@+id/editText11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText9"
-        tools:layout_editor_absoluteX="99dp" />
-
-    <EditText
-        android:id="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:gravity="center"
-        android:hint="DNI"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/editText9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextNombre"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-
-        app:layout_constraintTop_toBottomOf="@+id/editText7"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="NOMBRE"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDni" />
 
     <EditText
-        android:id="@+id/editText5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextApellidos"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="APELLIDOS"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
 
     <EditText
-        android:id="@+id/editText3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextPais"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="PAIS"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextApellidos" />
 
     <EditText
-        android:id="@+id/editText4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextCiudad"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="CIUDAD"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPais" />
 
     <EditText
-        android:id="@+id/editText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextDomicilio"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="DOMICILIO"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCiudad" />
 
     <EditText
-        android:id="@+id/editText8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/editTextOcupacion"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:gravity="center"
-        android:hint="DNI"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        tools:layout_editor_absoluteX="99dp" />
+        android:hint="OCUPACION"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDomicilio" />
+
+    <EditText
+        android:id="@+id/editTextIban"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="IBAN"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextOcupacion" />
+
+    <EditText
+        android:id="@+id/editTextTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="TELEFONO"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/editTextIban" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="EMAIL"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTelefono" />
+
+    <EditText
+        android:id="@+id/editTextContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="CONTRASEÑA"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_test"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
@@ -171,21 +173,8 @@
         android:layout_marginTop="10dp"
         android:text="Realizar test"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText10"
+        app:layout_constraintTop_toBottomOf="@+id/editTextContraseña"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="143dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="FORMULARIO DE REGISTRO"
-        android:textSize="24sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="55dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

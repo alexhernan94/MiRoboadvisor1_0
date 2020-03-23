@@ -7,10 +7,10 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 public class PrincipalActivity extends AppCompatActivity {
 
-    private FirebaseUser mUser;
     private FirebaseAuth mAuth;
 
     @Override
@@ -23,6 +23,10 @@ public class PrincipalActivity extends AppCompatActivity {
         String usuario = mAuth.getCurrentUser().getEmail();
 
         Toast.makeText(PrincipalActivity.this, "Bienvenido " + usuario, Toast.LENGTH_SHORT).show();
+
+
+
+
 
     }
 }

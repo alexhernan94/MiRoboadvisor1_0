@@ -17,7 +17,6 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private FirebaseUser mUser;
 
     private EditText txtEmail;
     private EditText txtPass;
