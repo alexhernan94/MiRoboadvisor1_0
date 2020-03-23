@@ -12,18 +12,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseUser mUser;
 
     private EditText txtEmail;
     private EditText txtPass;
     private Button btnLogin;
     private Button btnRegister;
     private Button btnForgotPass;
-
 
     Autenticaciones a = new Autenticaciones();
 
@@ -41,20 +41,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btn_login);
         btnRegister = (Button) findViewById(R.id.btn_register);
         btnForgotPass = (Button) findViewById(R.id.btn_newPass);
-/*
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
-                if (firebaseAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
-                } else {
-                    Toast.makeText(MainActivity.this, "Datos incorrectos", Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
-
- */
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //a.LoginEmail();
                 startActivity(new Intent(MainActivity.this, RegistroActivity.class));
             }
         });
@@ -90,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         btnForgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //a.LoginEmail();
                 startActivity(new Intent(MainActivity.this, RecuperarContraseñaActivity.class));
             }
         });

@@ -1,5 +1,6 @@
 package com.example.miroboadvisor1_0;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
@@ -15,6 +16,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.concurrent.Executor;
@@ -30,9 +34,14 @@ public class Autenticaciones{
     private EditText txtPass;
     private Button btnLogin;
 
-    private boolean estado;
-
     private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
+
+    private void startActivity(Context context, Class<?> activity) {
+        Intent intent = new Intent(context, activity);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
 
     public void LoginEmail(String email, String password, final Context context){
         mAuth = FirebaseAuth.getInstance();
@@ -44,16 +53,11 @@ public class Autenticaciones{
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            startActivity(context);
+                                startActivity(context, PrincipalActivity.class);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                         }
-                    }
-                    private void startActivity(Context context) {
-                        Intent intent = new Intent(context, PrincipalActivity.class);
-                        intent.putExtra("sub1","chemistry");
-                        context.startActivity(intent);
                     }
                 });
     }
