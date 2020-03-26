@@ -1,6 +1,5 @@
-package com.example.miroboadvisor1_0;
+package com.example.miroboadvisor1_0.ui;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,8 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.miroboadvisor1_0.Autenticaciones;
+import com.example.miroboadvisor1_0.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(txtEmail.getText()) && !TextUtils.isEmpty(txtPass.getText())){
 
                     a.LoginEmail(email, password, getApplicationContext());
-
+                    Toast.makeText(MainActivity.this, "Datos correctos", Toast.LENGTH_SHORT).show();
                     if ( mAuth.getCurrentUser() != null){
                         txtEmail.setText("");
                         txtPass.setText("");

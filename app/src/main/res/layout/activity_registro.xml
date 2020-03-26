@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistroActivity">
+    android:scrollbars="vertical"
+    tools:context=".ui.RegistroActivity">
 
     <TextView
         android:id="@+id/textView3"
@@ -15,7 +16,8 @@
         android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="FORMULARIO DE REGISTRO"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,12 +26,14 @@
         android:id="@+id/editTextDni"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:gravity="center"
         android:hint="DNI o NIE"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -42,6 +46,7 @@
         android:gravity="center"
         android:hint="NOMBRE"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDni" />
@@ -55,6 +60,7 @@
         android:gravity="center"
         android:hint="APELLIDOS"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
@@ -68,6 +74,7 @@
         android:gravity="center"
         android:hint="PAIS"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextApellidos" />
@@ -81,6 +88,7 @@
         android:gravity="center"
         android:hint="CIUDAD"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPais" />
@@ -94,6 +102,7 @@
         android:gravity="center"
         android:hint="DOMICILIO"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextCiudad" />
@@ -107,6 +116,7 @@
         android:gravity="center"
         android:hint="OCUPACION"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDomicilio" />
@@ -120,6 +130,7 @@
         android:gravity="center"
         android:hint="IBAN"
         android:inputType="textPersonName"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextOcupacion" />
@@ -133,9 +144,10 @@
         android:gravity="center"
         android:hint="TELEFONO"
         android:inputType="phone"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextIban" />
 
     <EditText
@@ -147,6 +159,7 @@
         android:gravity="center"
         android:hint="EMAIL"
         android:inputType="textEmailAddress"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTelefono" />
@@ -160,21 +173,22 @@
         android:gravity="center"
         android:hint="CONTRASEÑA"
         android:inputType="textPassword"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <Button
         android:id="@+id/btn_test"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_width="242dp"
+        android:layout_height="74dp"
         android:layout_marginTop="10dp"
         android:text="Realizar test"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextContraseña"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="143dp" />
+        app:layout_constraintVertical_bias="0.481" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

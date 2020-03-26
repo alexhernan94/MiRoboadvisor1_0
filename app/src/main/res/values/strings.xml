@@ -2,11 +2,14 @@
     <string name="app_name">Roboadvisor</string>
 
     <string name="email">Email</string>
-    <string name="pass">Password</string>
+    <string name="pass">Contraseña</string>
     <string name="btn_login">Inicio sesión</string>
     <string name="btn_register">Registrar</string>
     <string name="btn_newPass">Olvidé la contraseña</string>
     <string name="btn_enviar_pass">Enviar contraseña</string>
+    <string name="tab_a_label">general</string>
+    <string name="tab_b_label">carteras</string>
+    <string name="tab_c_label">ajustes</string>
 
 
 </resources>

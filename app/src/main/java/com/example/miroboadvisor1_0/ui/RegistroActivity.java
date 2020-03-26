@@ -1,4 +1,4 @@
-package com.example.miroboadvisor1_0;
+package com.example.miroboadvisor1_0.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.miroboadvisor1_0.R;
+import com.example.miroboadvisor1_0.Usuarios;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -17,7 +20,9 @@ import java.util.Map;
 
 public class RegistroActivity extends AppCompatActivity {
 
-    private FirebaseDatabase database;
+    private DatabaseReference database;
+    private DatabaseReference Usuarios;
+    private FirebaseAuth mAuth;
 
     private EditText txtDni;
     private EditText txtNombre;
@@ -38,6 +43,9 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        database = FirebaseDatabase.getInstance().getReference("Usuario");
+        mAuth = FirebaseAuth.getInstance();
+
         txtDni = (EditText) findViewById(R.id.editTextDni);
         txtNombre = (EditText) findViewById(R.id.editTextNombre);
         txtApellidos = (EditText) findViewById(R.id.editTextApellidos);
@@ -52,15 +60,9 @@ public class RegistroActivity extends AppCompatActivity {
 
         btn_test = (Button) findViewById(R.id.btn_test);
 
-        database = FirebaseDatabase.getInstance();
-
-
         btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                DatabaseReference myRef = database.getReference(txtDni.getText().toString());
-
                 String dni = txtDni.getText().toString();
                 String nombre = txtNombre.getText().toString();
                 String apellidos = txtApellidos.getText().toString();
@@ -73,45 +75,28 @@ public class RegistroActivity extends AppCompatActivity {
                 String email = txtEmail.getText().toString();
                 String contraseña = txtPass.getText().toString();
 
-                cargaDatos(myRef, dni, nombre, apellidos, pais, ciudad, domicilio, ocupacion, iban, telefono, email, contraseña);
+                if (dni.isEmpty() || nombre.isEmpty() || apellidos.isEmpty() ||
+                        pais.isEmpty() || ciudad.isEmpty() || domicilio.isEmpty() ||
+                        ocupacion.isEmpty() || iban.isEmpty() || telefono.isEmpty() ||
+                        email.isEmpty() || contraseña.isEmpty()){
 
-                Toast.makeText(RegistroActivity.this, "Datos guardados correctamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegistroActivity.this, "Rellene todos los datos", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    registrarUsuario(dni, nombre, apellidos, pais, ciudad, domicilio, ocupacion, iban, telefono, email, contraseña);
+                    mAuth.createUserWithEmailAndPassword(email,contraseña);
+
+                    Toast.makeText(RegistroActivity.this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegistroActivity.this, TestActivity.class));
+                }
             }
         });
     }
 
-    private void cargaDatos(DatabaseReference myRef, String dni, String nombre, String apellidos, String pais, String ciudad, String domicilio, String ocupacion, String iban, String telefono, String email, String contraseña) {
+    public void registrarUsuario(String dni, String nombre, String apellidos, String pais, String ciudad, String domicilio, String ocupacion, String iban, String telefono, String email, String contraseña){
 
-        Map<String, Object> datosUsuario = new HashMap<>();
-
-        if (Validaciones.validarDNI(dni) || Validaciones.validarNIE(dni)){
-            datosUsuario.put("DNI", dni);
-        }else {
-            Toast.makeText(RegistroActivity.this, "DNI o NIE incorrecto", Toast.LENGTH_SHORT).show();
-        }
-        datosUsuario.put("Nombre", nombre);
-        datosUsuario.put("Apelllidos", apellidos);
-        datosUsuario.put("Pais", pais);
-        datosUsuario.put("Ciudad", ciudad);
-        datosUsuario.put("Domicilio", domicilio);
-        datosUsuario.put("Ocupacion", ocupacion);
-        if(Validaciones.validarIBAN(iban)){
-            datosUsuario.put("IBAN", iban);
-        }else{
-            Toast.makeText(RegistroActivity.this, "IBAN incorrecto", Toast.LENGTH_SHORT).show();
-        }
-        if(telefono.length()==9){
-            datosUsuario.put("Telefono", telefono);
-        }else {
-            Toast.makeText(RegistroActivity.this, "Telefono incorrecto", Toast.LENGTH_SHORT).show();
-        }
-        datosUsuario.put("Email", email);
-        datosUsuario.put("Contraseña", contraseña);
-
-        myRef.setValue(datosUsuario);
-    }
-
-    public void onBackPressed(){
-        startActivity(new Intent(RegistroActivity.this, MainActivity.class));
+        Usuarios usuario = new Usuarios(dni, nombre, apellidos, pais, ciudad, domicilio, ocupacion, iban, telefono, email, contraseña);
+        database.child(txtDni.getText().toString()).setValue(usuario);
     }
 }

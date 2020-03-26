@@ -6,28 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <Button
-        android:id="@+id/btn_register"
-        android:layout_width="155dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/btn_register"
+        android:id="@+id/btn_login"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/btn_login"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPass" />
 
     <Button
         android:id="@+id/btn_newPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="56dp"
         android:text="@string/btn_newPass"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/btn_register"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <ImageView
         android:id="@+id/logotipo"
@@ -39,42 +53,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="159dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/btn_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPass" />
 
     <EditText
         android:id="@+id/editTextPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        style="@android:style/Widget.DeviceDefault.EditText"
+        android:layout_width="398dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
         android:ems="15"
         android:hint="@string/pass"
         android:inputType="textPassword"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
+        style="@android:style/Widget.DeviceDefault.EditText"
+        android:layout_width="399dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="308dp"
         android:ems="15"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

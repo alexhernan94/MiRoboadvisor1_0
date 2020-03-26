@@ -1,4 +1,4 @@
-package com.example.miroboadvisor1_0;
+package com.example.miroboadvisor1_0.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.miroboadvisor1_0.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class RecuperarContraseñaActivity extends AppCompatActivity {
 
