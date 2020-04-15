@@ -3,15 +3,24 @@ package com.example.miroboadvisor1_0.ui;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.miroboadvisor1_0.R;
 import com.example.miroboadvisor1_0.Usuarios;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,6 +45,14 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private Usuarios usuarios;
     private TextView nomUser;
+
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private PagerAdapter pagerAdapter;
+    private TabItem tabGeneral;
+    private TabItem tabCarteras;
+    private TabItem tabAjustes;
 
     @SuppressLint("ResourceType")
     @Override
@@ -71,6 +88,45 @@ public class PrincipalActivity extends AppCompatActivity {
                 Toast.makeText(PrincipalActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        tabLayout = findViewById(R.id.tabLayout);
+        tabGeneral = findViewById(R.id.tabGeneral);
+        tabCarteras = findViewById(R.id.tabCarteras);
+        tabAjustes = findViewById(R.id.tabAjustes);
+
+        viewPager = findViewById(R.id.viewPager);
+
+        pagerAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
+
+        tabLayout.callOnClick();
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 1){
+                    //Toast.makeText(PrincipalActivity.this, "Carteras", Toast.LENGTH_SHORT).show();
+                }
+                else if (tab.getPosition() == 2){
+                    //Toast.makeText(PrincipalActivity.this, "Ajustes", Toast.LENGTH_SHORT).show();
+                }else{
+                    //Toast.makeText(PrincipalActivity.this, "General", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
     }
 }

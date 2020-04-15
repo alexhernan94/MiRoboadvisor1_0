@@ -27,14 +27,14 @@ public class TestActivity extends AppCompatActivity {
 
         //Toast.makeText(TestActivity.this, "TEST " + usuario, Toast.LENGTH_SHORT).show();
 
-        btn_guardarTest = (Button)findViewById(R.id.btn_guardarTest);
+        /*btn_guardarTest = (Button)findViewById(R.id.btn_guardarTest);
 
         btn_guardarTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TestActivity.this, MainActivity.class));
+                startActivity(new Intent(TestActivity.this, PrincipalActivity.class));
             }
-        });
+        });*/
 
 
     }
