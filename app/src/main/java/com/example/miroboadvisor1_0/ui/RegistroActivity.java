@@ -92,24 +92,14 @@ public class RegistroActivity extends AppCompatActivity {
                     Toast.makeText(RegistroActivity.this, "Rellene todos los datos", Toast.LENGTH_SHORT).show();
 
                 }else{
-
-                   // mAuth.createUserWithEmailAndPassword(email, contraseña);
-                    //mUser = mAuth.getCurrentUser();
-
-
                     mAuth.createUserWithEmailAndPassword(email, contraseña)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        //Logica luego de loguearse
                                         mUser = mAuth.getCurrentUser();
-                                        Log.e(mUser.getEmail(), "eeeeeeeeeeeee");
-                                        Log.e(mUser.getUid(), "aaaaaaaaaaa");
                                         registrarUsuario(dni, nombre, apellidos, pais, ciudad, domicilio, ocupacion, iban, telefono, email, contraseña);
                                     } else {
-
-                                        // If sign in fails, display a message to the user.
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                                         Toast.makeText(RegistroActivity.this, "Authentication failed.",
                                                 Toast.LENGTH_SHORT).show();

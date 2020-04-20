@@ -3,19 +3,46 @@
 
     <string name="email">Email</string>
     <string name="pass">Contraseña</string>
+
     <string name="btn_login">Inicio sesión</string>
     <string name="btn_register">Registrar</string>
     <string name="btn_newPass">Olvidé la contraseña</string>
     <string name="btn_enviar_pass">Enviar contraseña</string>
+    <string name="btn_delUser">Borrar cuenta</string>
+    <string name="btn_test">Realizar Test</string>
+    <string name="btn_logOut">Cerrar sesión</string>
+
     <string name="tab_prin_general">general</string>
     <string name="tab_prin_carteras">carteras</string>
     <string name="tab_prin_ajustes">ajustes</string>
     <string name="tab_ajustes_ver">ver</string>
     <string name="tab_ajustes_mod">modificar</string>
     <string name="tab_ajustes_borrar">borrar</string>
-    <string name="btn_delUser">Borrar cuenta</string>
-    <string name="btn_test">Realizar Test</string>
-    <string name="btn_logOut">Cerrar sesión</string>
-    <string name="btn_modDatos">Modificar Datos</string>
+
+    <string name="rb_sinObjetivos">Sin objetivos</string>
+    <string name="rb_jubilacion">Jubilación</string>
+    <string name="rb_optimizar">Optimizar ahorros</string>
+    <string name="rb_rentabilizar">Maximizar rentabilidad</string>
+    <string name="rb_precavido">Precavido</string>
+    <string name="rb_conservador">Muy conservador</string>
+    <string name="rb_balanceado">Balanceado</string>
+    <string name="rb_decidido">Decidido</string>
+    <string name="rb_aventurero">Aventurero</string>
+
+    <string-array name="ocupacionItem">
+        <item>Trabajador/a</item>
+        <item>Jubilado/a</item>
+        <item>Desempleado/a</item>
+    </string-array>
+
+    <string-array name="perdidaItem">
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>15%</item>
+        <item>30%</item>
+    </string-array>
+
 
 </resources>
