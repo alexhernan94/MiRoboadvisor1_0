@@ -38,7 +38,6 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText txtPais;
     private EditText txtCiudad;
     private EditText txtDomicilio;
-    private EditText txtOcupacion;
     private EditText txtIban;
     private EditText txtTelefono;
     private EditText txtEmail;
@@ -61,7 +60,6 @@ public class RegistroActivity extends AppCompatActivity {
         txtPais = (EditText) findViewById(R.id.editTextPais);
         txtCiudad = (EditText) findViewById(R.id.editTextCiudad);
         txtDomicilio = (EditText) findViewById(R.id.editTextDomicilio);
-        txtOcupacion = (EditText) findViewById(R.id.editTextOcupacion);
         txtIban = (EditText) findViewById(R.id.editTextIban);
         txtTelefono = (EditText) findViewById(R.id.editTextTelefono);
         txtEmail = (EditText) findViewById(R.id.editTextEmail);
@@ -78,7 +76,6 @@ public class RegistroActivity extends AppCompatActivity {
                 final String pais = txtPais.getText().toString();
                 final String ciudad = txtCiudad.getText().toString();
                 final String domicilio = txtDomicilio.getText().toString();
-                final String ocupacion = txtOcupacion.getText().toString();
                 final String iban = txtIban.getText().toString();
                 final String telefono = txtTelefono.getText().toString();
                 final String email = txtEmail.getText().toString();
@@ -86,8 +83,8 @@ public class RegistroActivity extends AppCompatActivity {
 
                 if (dni.isEmpty() || nombre.isEmpty() || apellidos.isEmpty() ||
                         pais.isEmpty() || ciudad.isEmpty() || domicilio.isEmpty() ||
-                        ocupacion.isEmpty() || iban.isEmpty() || telefono.isEmpty() ||
-                        email.isEmpty() || contraseña.isEmpty()){
+                        iban.isEmpty() || telefono.isEmpty() || email.isEmpty() ||
+                        contraseña.isEmpty()){
 
                     Toast.makeText(RegistroActivity.this, "Rellene todos los datos", Toast.LENGTH_SHORT).show();
 
@@ -98,7 +95,7 @@ public class RegistroActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         mUser = mAuth.getCurrentUser();
-                                        registrarUsuario(dni, nombre, apellidos, pais, ciudad, domicilio, ocupacion, iban, telefono, email, contraseña);
+                                        registrarUsuario(dni, nombre, apellidos, pais, ciudad, domicilio, iban, telefono, email, contraseña);
                                     } else {
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
                                         Toast.makeText(RegistroActivity.this, "Authentication failed.",
@@ -114,9 +111,9 @@ public class RegistroActivity extends AppCompatActivity {
         });
     }
 
-    public void registrarUsuario(String dni, String nombre, String apellidos, String pais, String ciudad, String domicilio, String ocupacion, String iban, String telefono, String email, String contraseña){
+    public void registrarUsuario(String dni, String nombre, String apellidos, String pais, String ciudad, String domicilio, String iban, String telefono, String email, String contraseña){
 
-        Usuarios usuario = new Usuarios(dni, nombre, apellidos, pais, ciudad, domicilio, ocupacion, iban, telefono, email, contraseña);
+        Usuarios usuario = new Usuarios(dni, nombre, apellidos, pais, ciudad, domicilio, iban, telefono, email, contraseña);
         database.child(mUser.getUid()).setValue(usuario);
     }
 }

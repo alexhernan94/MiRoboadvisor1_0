@@ -12,7 +12,6 @@ public class Usuarios implements Serializable {
     private String Pais;
     private String Ciudad;
     private String Domicilio;
-    private String Ocupacion;
     private String Iban;
     private String Telefono;
     private String Email;
@@ -22,14 +21,13 @@ public class Usuarios implements Serializable {
 
     }
 
-    public Usuarios(String DNI, String nombre, String apellidos, String pais, String ciudad, String domicilio, String ocupacion, String iban, String telefono, String email, String contraseña) {
+    public Usuarios(String DNI, String nombre, String apellidos, String pais, String ciudad, String domicilio, String iban, String telefono, String email, String contraseña) {
         this.DNI = DNI;
         Nombre = nombre;
         Apellidos = apellidos;
         Pais = pais;
         Ciudad = ciudad;
         Domicilio = domicilio;
-        Ocupacion = ocupacion;
         Iban = iban;
         Telefono = telefono;
         Email = email;
@@ -84,14 +82,6 @@ public class Usuarios implements Serializable {
         Domicilio = domicilio;
     }
 
-    public String getOcupacion() {
-        return Ocupacion;
-    }
-
-    public void setOcupacion(String ocupacion) {
-        Ocupacion = ocupacion;
-    }
-
     public String getIban() {
         return Iban;
     }
@@ -133,7 +123,6 @@ public class Usuarios implements Serializable {
                 ", Pais='" + Pais + '\'' +
                 ", Ciudad='" + Ciudad + '\'' +
                 ", Domicilio='" + Domicilio + '\'' +
-                ", Ocupacion='" + Ocupacion + '\'' +
                 ", Iban='" + Iban + '\'' +
                 ", Telefono='" + Telefono + '\'' +
                 ", Email='" + Email + '\'' +

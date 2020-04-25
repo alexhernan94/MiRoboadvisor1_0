@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     tools:context=".ui.AjustesFragment">
 
-x
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -32,11 +31,11 @@ x
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="44dp"
-            android:text="Guardar datos"
             android:enabled="false"
+            android:text="Guardar datos"
             app:layout_constraintBottom_toTopOf="@+id/btn_logOut"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/cardview"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
@@ -75,11 +74,12 @@ x
             app:layout_constraintBottom_toTopOf="@+id/btn_delUser"
             app:layout_constraintEnd_toStartOf="@+id/btn_test"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+            app:layout_constraintTop_toBottomOf="@+id/cardview"
             app:layout_constraintVertical_bias="1.0" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+
+        <androidx.cardview.widget.CardView
+            android:id="@id/cardview"
             android:layout_width="410dp"
             android:layout_height="535dp"
             android:layout_marginStart="1dp"
@@ -87,11 +87,211 @@ x
             android:layout_marginTop="8dp"
             android:layout_marginEnd="1dp"
             android:layout_marginRight="1dp"
+            app:cardElevation="0dp"
+            app:cardMaxElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/textView4" >
 
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:text="             "
+                    android:focusable="false"
+                    android:textSize="24sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:text="DNI"
+                    android:textSize="24sp"
+                    />
+
+                <EditText
+                    android:id="@+id/txt_dni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:hint="DNI"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:text="NOMBRE"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:hint="NOMBRE"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:text="APELLIDOS"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_apellidos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="2"
+                    android:hint="APELLIDOS"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:text="PAIS"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_pais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="2"
+                    android:hint="PAIS"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="5"
+                    android:layout_column="0"
+                    android:text="CIUDAD"
+                    android:inputType="textPersonName"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_ciudad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="5"
+                    android:layout_column="2"
+                    android:hint="CIUDAD"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="6"
+                    android:layout_column="0"
+                    android:text="DOMICILIO"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_domicilio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="6"
+                    android:layout_column="2"
+                    android:hint="DOMICILIO"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="8"
+                    android:layout_column="0"
+                    android:text="IBAN"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_iban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="8"
+                    android:layout_column="2"
+                    android:hint="IBAN"
+                    android:enabled="false"
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="9"
+                    android:layout_column="0"
+                    android:text="TELÉFONO"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="9"
+                    android:layout_column="2"
+                    android:hint="TELEFONO"
+                    android:enabled="false"
+                    android:inputType="phone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="10"
+                    android:layout_column="0"
+                    android:text="EMAIL"
+                    android:textSize="24sp"/>
+
+                <EditText
+                    android:id="@+id/txt_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="10"
+                    android:layout_column="2"
+                    android:hint="EMAIL"
+                    android:enabled="false"
+                    android:inputType="textEmailAddress" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="11"
+                    android:layout_column="0"
+                    android:text="CONTRASEÑA"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/txt_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="11"
+                    android:layout_column="2"
+                    android:hint="CONTRASEÑA"
+                    android:enabled="false"
+                    android:inputType="textPassword" />
+
+            </GridLayout>
+
+        </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

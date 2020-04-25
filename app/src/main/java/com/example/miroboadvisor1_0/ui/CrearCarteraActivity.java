@@ -1,7 +1,9 @@
 package com.example.miroboadvisor1_0.ui;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +20,8 @@ public class CrearCarteraActivity extends AppCompatActivity {
     private Spinner ocupacionItem;
     private Spinner perdidaItem;
     private Button btn_crear_cartera;
+    private Button btn_ayuda;
 
-    private String item_ocupacion;
-    private String item_perdida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +29,14 @@ public class CrearCarteraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_crear_cartera);
 
         btn_crear_cartera = (Button)findViewById(R.id.btn_crear_cartera);
+        btn_ayuda = (Button)findViewById(R.id.btn_ayuda);
         ocupacionItem = (Spinner)findViewById(R.id.ocupacionItem);
         perdidaItem = (Spinner)findViewById(R.id.perdidaItem);
 
         ocupacionItem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
            @Override
            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               item_ocupacion = parent.getItemAtPosition(position).toString();
+               //ocupacionItem = parent.getItemAtPosition(position).toString();
            }
 
            @Override
@@ -46,7 +48,7 @@ public class CrearCarteraActivity extends AppCompatActivity {
         perdidaItem.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                item_perdida = parent.getItemAtPosition(position).toString();
+                //perdidaItem = parent.getItemAtPosition(position).toString();
             }
 
             @Override
@@ -62,5 +64,37 @@ public class CrearCarteraActivity extends AppCompatActivity {
             }
         });
 
+        btn_ayuda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp(v);
+            }
+        });
+    }
+
+    public void PopUp(View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("- 1000€ de máximo a invertir\n" +
+                "\n" +
+                "- Máxima pérdida: cuánto se está dispuesto a perder el primer año de lo que se invierte\n" +
+                "\n" +
+                "- Corto plazo: menos de 1 año\n" +
+                "\n" +
+                "- Medio plazo: 1 a 3 años\n" +
+                "\n" +
+                "- Largo plazo: más de 3 años\n" +
+                "\n" +
+                "- En el patrimonio no se incluyen bienes inmuebles" +
+                "\n")
+                .setTitle("INFORMACION")
+                .setCancelable(false)
+                .setNeutralButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
