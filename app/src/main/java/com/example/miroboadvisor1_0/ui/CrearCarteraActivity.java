@@ -24,6 +24,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+
+
 public class CrearCarteraActivity extends AppCompatActivity {
 
     private DatabaseReference database;
@@ -52,6 +57,8 @@ public class CrearCarteraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cartera);
+        initPython();
+
 
         database = FirebaseDatabase.getInstance().getReference("Usuario");
         mAuth = FirebaseAuth.getInstance();
@@ -120,6 +127,12 @@ public class CrearCarteraActivity extends AppCompatActivity {
         btn_crear_cartera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Python py = Python.getInstance();
+                PyObject pyf = py.getModule("hellow"); //nombre script python
+                PyObject obj = pyf.callAttr("test", "aaaaaaaaaaa"); //nombre de la funcion
+                System.out.println(obj.toString());
+
                 final String nom_cartera = txt_cartera.getText().toString();
                 final String tipo_riesgo = selectedtext_riesgo;
                 final String tipo_objetivo = selectedtext_objetivos;
@@ -155,6 +168,12 @@ public class CrearCarteraActivity extends AppCompatActivity {
                 PopUp(v);
             }
         });
+    }
+
+    private void initPython() {
+        if (! Python.isStarted()) {
+            Python.start(new AndroidPlatform(this));
+        }
     }
 
     public void registrarCartera(String nom_cartera, String tipo_riesgo, String tipo_objetivo, String tipo_ocupacion, String tipo_perdida, String num_ahorros, String num_ingresos, String num_patrimonio, String num_edad, String num_importe) {
