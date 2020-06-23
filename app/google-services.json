@@ -45,20 +45,12 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:237561857005:android:6d5b9cea2712e90ef41de4",
+        "mobilesdk_app_id": "1:237561857005:android:27082497b9a8b9f6f41de4",
         "android_client_info": {
-          "package_name": "com.example.roboadvisor"
+          "package_name": "com.pfgAlex.miroboadvisor1_0"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "237561857005-lkdtqicspsk2avb7cbmjh26p0dbs3ehg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.roboadvisor",
-            "certificate_hash": "624b81be17cc149e03d996cb0e0b23703196540d"
-          }
-        },
         {
           "client_id": "237561857005-r3cflv94ff90uhsdm97m2sq6b3uf4e5u.apps.googleusercontent.com",
           "client_type": 3

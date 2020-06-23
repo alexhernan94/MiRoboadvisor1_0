@@ -1,4 +1,4 @@
-package com.example.miroboadvisor1_0;
+package com.pfgAlex.miroboadvisor1_0;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.miroboadvisor1_0", appContext.getPackageName());
+        assertEquals("com.uem.pfgAlex.com.uem.pfgAlex.miroboadvisor1_0", appContext.getPackageName());
     }
 }

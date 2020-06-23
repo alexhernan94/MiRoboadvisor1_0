@@ -1,4 +1,4 @@
-package com.example.miroboadvisor1_0;
+package com.pfgAlex.miroboadvisor1_0;
 
 import org.junit.Test;
 

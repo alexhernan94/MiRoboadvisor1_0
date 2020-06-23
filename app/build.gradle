@@ -6,7 +6,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.example.miroboadvisor1_0"
+        applicationId "com.pfgAlex.miroboadvisor1_0"
         sourceSets{
             main{
                 python{
@@ -51,6 +51,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.firebase:firebase-analytics:17.4.3'
-    implementation 'com.android.support:support-v4:28.0.0'
 }
 

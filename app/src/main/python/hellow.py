@@ -4,11 +4,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set()
 from sklearn.cluster import KMeans
 from sklearn import preprocessing
-
 
 data = pd.read_csv('Clientes.csv', sep=';')
 data
