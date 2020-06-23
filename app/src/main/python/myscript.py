@@ -1,2 +1,2 @@
 def test():
-    println("Hello world Chaquopy");
+    return "Hello world"
