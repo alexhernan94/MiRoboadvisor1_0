@@ -28,6 +28,7 @@ android {
             pip {
                 install "numpy"
                 install "tensorflow"
+                install "scikit-learn"
             }
         }
     }
