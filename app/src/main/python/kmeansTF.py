@@ -20,10 +20,10 @@ for _ in xrange(num_iterations):
     kmeans.train(input_fn)
     cluster_centers = kmeans.cluster_centers()
     if previous_centers is not None:
-        print 'delta:', cluster_centers - previous_centers
+        print ('delta:', cluster_centers - previous_centers)
     previous_centers = cluster_centers
-    print 'score:', kmeans.score(input_fn)
-print 'cluster centers:', cluster_centers
+    print ('score:', kmeans.score(input_fn))
+print ('cluster centers:', cluster_centers)
 
 # map the input points to their clusters
 cluster_indices = list(kmeans.predict_cluster_index(input_fn))
