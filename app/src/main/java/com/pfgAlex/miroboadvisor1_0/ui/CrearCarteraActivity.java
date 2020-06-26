@@ -128,12 +128,12 @@ public class CrearCarteraActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Python py = Python.getInstance();
-                //PyObject pyf = py.getModule("myscript"); //fichero python
-                //PyObject obj = pyf.callAttr("test"); //nombre de funcion a ejecutar
+                PyObject pyf = py.getModule("myscript"); //fichero python
+                PyObject obj = pyf.callAttr("test"); //nombre de funcion a ejecutar
 
-                //System.out.println(obj.toString());
+                System.out.println(obj.toString());
 
-                //Toast.makeText(CrearCarteraActivity.this, obj.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrearCarteraActivity.this, obj.toString(), Toast.LENGTH_SHORT).show();
 
                 final String nom_cartera = txt_cartera.getText().toString();
                 final String tipo_riesgo = selectedtext_riesgo;

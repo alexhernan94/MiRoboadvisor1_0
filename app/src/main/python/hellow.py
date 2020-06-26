@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn import preprocessing
 
-data = pd.read_csv('Clientes.csv', sep=';')
+data = pd.read_csv('src/main/python/Clientes.csv', sep=';')
 data
 
 x = data.copy()
