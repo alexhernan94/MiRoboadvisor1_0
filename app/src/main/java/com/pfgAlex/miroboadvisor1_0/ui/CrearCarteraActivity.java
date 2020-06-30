@@ -194,7 +194,15 @@ public class CrearCarteraActivity extends AppCompatActivity {
                         nom_fondo[0] = list.get(random.nextInt(list.size()));
 
                         mUser = mAuth.getCurrentUser();
+
                         registrarCartera(nom_cartera, tipo_riesgo, tipo_objetivo, tipo_ocupacion, tipo_perdida, num_ahorros, num_ingresos, num_patrimonio, num_edad, num_importe, nom_fondo[0]);
+
+                       /* if ((nom_cartera!="") || num_edad!="" || num_importe!="" || num_ingresos!= "" || num_ahorros != ""){
+                            Toast.makeText(CrearCarteraActivity.this, "Rellene todos los datos", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            registrarCartera(nom_cartera, tipo_riesgo, tipo_objetivo, tipo_ocupacion, tipo_perdida, num_ahorros, num_ingresos, num_patrimonio, num_edad, num_importe, nom_fondo[0]);
+                        }*/
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {

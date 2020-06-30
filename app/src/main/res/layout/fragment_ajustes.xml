@@ -12,18 +12,6 @@
 
         <!-- TODO: Update blank fragment layout -->
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginStart="156dp"
-            android:layout_marginLeft="156dp"
-            android:text="DATOS"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/btn_updateData"
             android:layout_width="155dp"
@@ -84,7 +72,6 @@
             android:layout_height="535dp"
             android:layout_marginStart="1dp"
             android:layout_marginLeft="1dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="1dp"
             android:layout_marginRight="1dp"
             app:cardElevation="0dp"
@@ -92,7 +79,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" >
+            tools:layout_editor_absoluteY="48dp">
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -103,10 +90,9 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="1"
-                    android:text="             "
                     android:focusable="false"
-                    android:textSize="24sp"
-                    />
+                    android:text="             "
+                    android:textSize="24sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,8 +100,7 @@
                     android:layout_row="0"
                     android:layout_column="0"
                     android:text="DNI"
-                    android:textSize="24sp"
-                    />
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_dni"
@@ -123,8 +108,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="0"
                     android:layout_column="2"
-                    android:hint="DNI"
                     android:enabled="false"
+                    android:hint="DNI"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -133,7 +118,7 @@
                     android:layout_row="1"
                     android:layout_column="0"
                     android:text="NOMBRE"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_nombre"
@@ -141,8 +126,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="1"
                     android:layout_column="2"
-                    android:hint="NOMBRE"
                     android:enabled="false"
+                    android:hint="NOMBRE"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -151,7 +136,7 @@
                     android:layout_row="2"
                     android:layout_column="0"
                     android:text="APELLIDOS"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_apellidos"
@@ -159,8 +144,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="2"
                     android:layout_column="2"
-                    android:hint="APELLIDOS"
                     android:enabled="false"
+                    android:hint="APELLIDOS"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -169,7 +154,7 @@
                     android:layout_row="3"
                     android:layout_column="0"
                     android:text="PAIS"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_pais"
@@ -177,8 +162,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="3"
                     android:layout_column="2"
-                    android:hint="PAIS"
                     android:enabled="false"
+                    android:hint="PAIS"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -186,9 +171,9 @@
                     android:layout_height="wrap_content"
                     android:layout_row="5"
                     android:layout_column="0"
-                    android:text="CIUDAD"
                     android:inputType="textPersonName"
-                    android:textSize="24sp"/>
+                    android:text="CIUDAD"
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_ciudad"
@@ -196,8 +181,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="5"
                     android:layout_column="2"
-                    android:hint="CIUDAD"
                     android:enabled="false"
+                    android:hint="CIUDAD"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -206,7 +191,7 @@
                     android:layout_row="6"
                     android:layout_column="0"
                     android:text="DOMICILIO"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_domicilio"
@@ -214,8 +199,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="6"
                     android:layout_column="2"
-                    android:hint="DOMICILIO"
                     android:enabled="false"
+                    android:hint="DOMICILIO"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -224,7 +209,7 @@
                     android:layout_row="8"
                     android:layout_column="0"
                     android:text="IBAN"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_iban"
@@ -232,8 +217,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="8"
                     android:layout_column="2"
-                    android:hint="IBAN"
                     android:enabled="false"
+                    android:hint="IBAN"
                     android:inputType="textPersonName" />
 
                 <TextView
@@ -242,7 +227,7 @@
                     android:layout_row="9"
                     android:layout_column="0"
                     android:text="TELÉFONO"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_telefono"
@@ -250,8 +235,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="9"
                     android:layout_column="2"
-                    android:hint="TELEFONO"
                     android:enabled="false"
+                    android:hint="TELEFONO"
                     android:inputType="phone" />
 
                 <TextView
@@ -260,7 +245,7 @@
                     android:layout_row="10"
                     android:layout_column="0"
                     android:text="EMAIL"
-                    android:textSize="24sp"/>
+                    android:textSize="24sp" />
 
                 <EditText
                     android:id="@+id/txt_email"
@@ -268,8 +253,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="10"
                     android:layout_column="2"
-                    android:hint="EMAIL"
                     android:enabled="false"
+                    android:hint="EMAIL"
                     android:inputType="textEmailAddress" />
 
                 <TextView
@@ -286,8 +271,8 @@
                     android:layout_height="wrap_content"
                     android:layout_row="11"
                     android:layout_column="2"
-                    android:hint="CONTRASEÑA"
                     android:enabled="false"
+                    android:hint="CONTRASEÑA"
                     android:inputType="textPassword" />
 
             </GridLayout>

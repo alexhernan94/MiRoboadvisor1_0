@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Fondos implements Serializable {
 
     private String Nombre;
-    private Long Riesgo;
+    private Integer Riesgo;
     private Float ano1;
     private Float ano3;
     private Float ano5;
@@ -17,7 +17,7 @@ public class Fondos implements Serializable {
 
     }
 
-    public Fondos(String nombre, Long riesgo, Float ano1, Float ano3, Float ano5, Float YTD, Long IMI, String categoria) {
+    public Fondos(String nombre, Integer riesgo, Float ano1, Float ano3, Float ano5, Float YTD, Long IMI, String categoria) {
         Nombre = nombre;
         Riesgo = riesgo;
         this.ano1 = ano1;
@@ -36,11 +36,11 @@ public class Fondos implements Serializable {
         Nombre = nombre;
     }
 
-    public Long getRiesgo() {
+    public int getRiesgo() {
         return Riesgo;
     }
 
-    public void setRiesgo(Long riesgo) {
+    public void setRiesgo(Integer riesgo) {
         Riesgo = riesgo;
     }
 
