@@ -44,5 +44,8 @@
         <item>30</item>
     </string-array>
 
+    <string name="nom_cartera"></string>
+    <string name="num_ingresos">Ingresos</string>
+    <string name="score">Score</string>
 
 </resources>

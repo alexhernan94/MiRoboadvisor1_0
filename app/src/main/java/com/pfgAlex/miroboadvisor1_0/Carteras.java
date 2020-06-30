@@ -14,12 +14,13 @@ public class Carteras implements Serializable {
     private String num_patrimonio;
     private String num_edad;
     private String num_importe;
+    private Fondos nom_fondo;
 
-    public Carteras(){
+    public Carteras() {
 
     }
 
-    public Carteras(String nom_cartera, String tipo_riesgo, String tipo_objetivo, String tipo_ocupacion, String tipo_perdida, String num_ahorros, String num_ingresos, String num_patrimonio, String num_edad, String num_importe) {
+    public Carteras(String nom_cartera, String tipo_riesgo, String tipo_objetivo, String tipo_ocupacion, String tipo_perdida, String num_ahorros, String num_ingresos, String num_patrimonio, String num_edad, String num_importe, Fondos nom_fondo) {
         this.nom_cartera = nom_cartera;
         this.tipo_riesgo = tipo_riesgo;
         this.tipo_objetivo = tipo_objetivo;
@@ -30,6 +31,7 @@ public class Carteras implements Serializable {
         this.num_patrimonio = num_patrimonio;
         this.num_edad = num_edad;
         this.num_importe = num_importe;
+        this.nom_fondo = nom_fondo;
     }
 
     public String getNom_cartera() {
@@ -112,6 +114,14 @@ public class Carteras implements Serializable {
         this.num_importe = num_importe;
     }
 
+    public Fondos getNom_fondo() {
+        return nom_fondo;
+    }
+
+    public void setNom_fondo(Fondos nom_fondo) {
+        this.nom_fondo = nom_fondo;
+    }
+
     @Override
     public String toString() {
         return "Carteras{" +
@@ -125,6 +135,7 @@ public class Carteras implements Serializable {
                 ", num_patrimonio='" + num_patrimonio + '\'' +
                 ", num_edad='" + num_edad + '\'' +
                 ", num_importe='" + num_importe + '\'' +
+                ", nom_fondo=" + nom_fondo +
                 '}';
     }
 }
