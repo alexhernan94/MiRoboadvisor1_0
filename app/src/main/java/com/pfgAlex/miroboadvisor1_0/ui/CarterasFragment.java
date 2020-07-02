@@ -107,9 +107,5 @@ public class CarterasFragment extends Fragment {
 
                 }
             });
-
-
-
-
     }
 }

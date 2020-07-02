@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    app:cardBackgroundColor="#f0ffed"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,6 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clickable="true"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -24,39 +28,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text=""
-                android:textSize="30sp"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                />
+                android:textSize="30sp" />
+
             <TextView
                 android:id="@+id/cv_2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:text=""
-                android:textSize="30sp"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/cv_3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:text=""
-                android:textSize="30sp"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/cv_4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:text=""
-                android:textSize="30sp"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/cv_5"
@@ -64,10 +67,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:text=""
-                android:textSize="30sp"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="20sp" />
 
         </LinearLayout>
 

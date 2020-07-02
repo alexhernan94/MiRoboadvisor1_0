@@ -16,11 +16,11 @@ public class PageAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
        switch (position){
-           //case 0:
-               //return new GeneralFragment();
            case 0:
-               return new CarterasFragment();
+               return new GeneralFragment();
            case 1:
+               return new CarterasFragment();
+           case 2:
                return new AjustesFragment();
            default:
                return null;

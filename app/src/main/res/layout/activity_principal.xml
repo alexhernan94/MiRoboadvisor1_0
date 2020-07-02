@@ -36,10 +36,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:tabIndicatorAnimationDuration="140">
 
-            <!--<com.google.android.material.tabs.TabItem
+            <com.google.android.material.tabs.TabItem
                android:id="@+id/tabGeneral"
                android:icon="@drawable/baseline_assessment_black_18dp"
-               android:text="@string/tab_prin_general" />-->
+               android:text="@string/tab_prin_general" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabCarteras"

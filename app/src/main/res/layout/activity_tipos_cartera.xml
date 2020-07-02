@@ -20,39 +20,52 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
-                android:id="@+id/txt_nombre_cartera"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cv_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text=""
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                />
+                android:textSize="30sp" />
+
             <TextView
-                android:id="@+id/txt_nombre_fondo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cv_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:text=""
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="30sp" />
+
             <TextView
-                android:id="@+id/txt_categoria_fondo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cv_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:text=""
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="30sp" />
+
             <TextView
-                android:id="@+id/txt_riesgo_fondo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/cv_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:text=""
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/cv_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:text=""
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="30sp" />
 
         </LinearLayout>
 

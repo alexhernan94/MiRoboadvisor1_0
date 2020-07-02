@@ -79,7 +79,7 @@ public class PrincipalActivity extends AppCompatActivity {
         });
 
         tabLayout = findViewById(R.id.tabLayout);
-        //tabGeneral = findViewById(R.id.tabGeneral);
+        tabGeneral = findViewById(R.id.tabGeneral);
         tabCarteras = findViewById(R.id.tabCarteras);
         tabAjustes = findViewById(R.id.tabAjustes);
 

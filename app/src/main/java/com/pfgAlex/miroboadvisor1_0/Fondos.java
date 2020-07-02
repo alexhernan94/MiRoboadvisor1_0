@@ -6,10 +6,10 @@ public class Fondos implements Serializable {
 
     private String Nombre;
     private Integer Riesgo;
-    private Float ano1;
-    private Float ano3;
-    private Float ano5;
-    private Float YTD;
+    private Double ano1;
+    private Double ano3;
+    private Double ano5;
+    private Double YTD;
     private Long IMI;
     private String Categoria;
 
@@ -17,7 +17,7 @@ public class Fondos implements Serializable {
 
     }
 
-    public Fondos(String nombre, Integer riesgo, Float ano1, Float ano3, Float ano5, Float YTD, Long IMI, String categoria) {
+    public Fondos(String nombre, Integer riesgo, Double ano1, Double ano3, Double ano5, Double YTD, Long IMI, String categoria) {
         Nombre = nombre;
         Riesgo = riesgo;
         this.ano1 = ano1;
@@ -36,7 +36,7 @@ public class Fondos implements Serializable {
         Nombre = nombre;
     }
 
-    public int getRiesgo() {
+    public Integer getRiesgo() {
         return Riesgo;
     }
 
@@ -44,35 +44,35 @@ public class Fondos implements Serializable {
         Riesgo = riesgo;
     }
 
-    public Float getAno1() {
+    public Double getAno1() {
         return ano1;
     }
 
-    public void setAno1(Float ano1) {
+    public void setAno1(Double ano1) {
         this.ano1 = ano1;
     }
 
-    public Float getAno3() {
+    public Double getAno3() {
         return ano3;
     }
 
-    public void setAno3(Float ano3) {
+    public void setAno3(Double ano3) {
         this.ano3 = ano3;
     }
 
-    public Float getAno5() {
+    public Double getAno5() {
         return ano5;
     }
 
-    public void setAno5(Float ano5) {
+    public void setAno5(Double ano5) {
         this.ano5 = ano5;
     }
 
-    public Float getYTD() {
+    public Double getYTD() {
         return YTD;
     }
 
-    public void setYTD(Float YTD) {
+    public void setYTD(Double YTD) {
         this.YTD = YTD;
     }
 
@@ -98,10 +98,10 @@ public class Fondos implements Serializable {
                 "Nombre='" + Nombre + '\'' +
                 ", Riesgo=" + Riesgo +
                 ", ano1=" + ano1 +
-                ", ano2=" + ano3 +
-                ", ano3=" + ano5 +
-                ", Ytd=" + YTD +
-                ", Imi=" + IMI +
+                ", ano3=" + ano3 +
+                ", ano5=" + ano5 +
+                ", YTD=" + YTD +
+                ", IMI=" + IMI +
                 ", Categoria='" + Categoria + '\'' +
                 '}';
     }
