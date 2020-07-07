@@ -32,11 +32,15 @@
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="20sp" />
 
-            <com.github.mikephil.charting.charts.LineChart
+            <!--<com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart"
                 android:layout_width="match_parent"
-                android:layout_height="150dip" />
+                android:layout_height="150dip" />-->
 
+            <lecho.lib.hellocharts.view.LineChartView
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
 
         </LinearLayout>
 

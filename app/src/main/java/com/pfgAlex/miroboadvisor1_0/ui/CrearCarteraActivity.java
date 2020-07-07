@@ -185,7 +185,7 @@ public class CrearCarteraActivity extends AppCompatActivity {
                         List<Fondos> list= new ArrayList <>();
 
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            fondos = postSnapshot.getValue(Fondos.class);
+                                fondos = postSnapshot.getValue(Fondos.class);
                             if (fondos.getIMI() <= Long.parseLong(num_importe) && (fondos.getRiesgo() <= Long.parseLong(obj.toString()))){
                                 list.add(fondos);
                             }

@@ -1,5 +1,6 @@
 package com.pfgAlex.miroboadvisor1_0.ui;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,14 @@ import com.pfgAlex.miroboadvisor1_0.R;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import lecho.lib.hellocharts.model.Axis;
+import lecho.lib.hellocharts.model.AxisValue;
+import lecho.lib.hellocharts.model.Line;
+import lecho.lib.hellocharts.model.LineChartData;
+import lecho.lib.hellocharts.model.PointValue;
+import lecho.lib.hellocharts.view.LineChartView;
+import lecho.lib.hellocharts.model.Viewport;
 
 public class FondosAdapter extends RecyclerView.Adapter<FondosAdapter.FondoViewHolder> {
 
@@ -56,42 +65,44 @@ public class FondosAdapter extends RecyclerView.Adapter<FondosAdapter.FondoViewH
             TextView cv1 = miItem.findViewById(R.id.cv_fondo_1);
             cv1.setText(dato.getNom_fondo().getNombre());
 
+            LineChartView lineChartView = miItem.findViewById(R.id.lineChart);
 
-            LineChart lineChart = miItem.findViewById(R.id.lineChart);
-            LineDataSet lineDataSet = new LineDataSet(lineChartDataSet(), dato.getNom_fondo().toString());
-            ArrayList<ILineDataSet> iLineDataSets = new ArrayList<>();
-            iLineDataSets.add(lineDataSet);
+            int[] axisData = {5,3,1};
+            Float[] yAxisData = {dato.getNom_fondo().getAno5(), dato.getNom_fondo().getAno3(), dato.getNom_fondo().getAno1()};
 
-            LineData lineData = new LineData();
-            lineChart.setData(lineData);
-            lineChart.invalidate();
-        }
+            List yAxisValues = new ArrayList();
+            List axisValues = new ArrayList();
 
-        public ArrayList<Entry> lineChartDataSet(){
-            Carteras dato = new Carteras();
-            ArrayList<Entry> dataSet = new ArrayList<>();
+            Line line = new Line(yAxisValues).setColor(Color.parseColor("#9C27B0"));;
 
-            Double valor1 = -0.3449000120162964;
-            //Double valor2 = dato.getNom_fondo().getAno1();
+            for(int i = 0; i < axisData.length; i++){
+                axisValues.add(i, new AxisValue(i).setLabel(String.valueOf(axisData[i])));
+            }
 
-            /*System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-            System.out.println(valor1);
-            System.out.println("-----------------------------------------------");
-            System.out.println(valor2.floatValue());*/
+            for (int i = 0; i < yAxisData.length; i++){
+                yAxisValues.add(new PointValue(i, yAxisData[i]));
+            }
 
+            List lines = new ArrayList();
+            lines.add(line);
 
-            //System.out.println(dato.getNom_fondo().getAno3().toString());
-            //System.out.println(dato.getNom_fondo().getAno5().toString());
+            LineChartData dataG = new LineChartData();
+            dataG.setLines(lines);
 
-            /*dataSet.add(new Entry(Float.parseFloat(String.valueOf(-0.3449000120162964)),Float.parseFloat(String.valueOf(-0.3449000120162964))));
-            dataSet.add(new Entry(Float.parseFloat(String.valueOf(-0.1339000016450882)),Float.parseFloat(String.valueOf(-0.1339000016450882))));
-            dataSet.add(new Entry(Float.parseFloat(String.valueOf(0.0)),Float.parseFloat(String.valueOf(0.0))));*/
+            Axis axis = new Axis();
+            axis.setValues(axisValues);
+            axis.setName("Años");
+            axis.setTextSize(10);
+            axis.setTextColor(Color.parseColor("#03A9F4"));
+            dataG.setAxisXBottom(axis);
 
-            /*dataSet.add(new Entry(dato.getNom_fondo().getAno1(), dato.getNom_fondo().getAno1()));
-            dataSet.add(new Entry(dato.getNom_fondo().getAno3(), dato.getNom_fondo().getAno3()));
-            dataSet.add(new Entry(dato.getNom_fondo().getAno5(), dato.getNom_fondo().getAno5()));*/
+            Axis yAxis = new Axis();
+            yAxis.setName("Rentabilidad");
+            yAxis.setTextColor(Color.parseColor("#03A9F4"));
+            yAxis.setTextSize(10);
+            dataG.setAxisYLeft(yAxis);
 
-            return dataSet;
+            lineChartView.setLineChartData(dataG);
         }
     }
 }

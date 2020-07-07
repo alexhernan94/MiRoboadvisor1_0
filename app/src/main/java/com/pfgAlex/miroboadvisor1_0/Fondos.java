@@ -6,10 +6,10 @@ public class Fondos implements Serializable {
 
     private String Nombre;
     private Integer Riesgo;
-    private Double ano1;
-    private Double ano3;
-    private Double ano5;
-    private Double YTD;
+    private Float ano1;
+    private Float ano3;
+    private Float ano5;
+    private Float YTD;
     private Long IMI;
     private String Categoria;
 
@@ -17,7 +17,7 @@ public class Fondos implements Serializable {
 
     }
 
-    public Fondos(String nombre, Integer riesgo, Double ano1, Double ano3, Double ano5, Double YTD, Long IMI, String categoria) {
+    public Fondos(String nombre, Integer riesgo, Float ano1, Float ano3, Float ano5, Float YTD, Long IMI, String categoria) {
         Nombre = nombre;
         Riesgo = riesgo;
         this.ano1 = ano1;
@@ -44,35 +44,35 @@ public class Fondos implements Serializable {
         Riesgo = riesgo;
     }
 
-    public Double getAno1() {
+    public Float getAno1() {
         return ano1;
     }
 
-    public void setAno1(Double ano1) {
+    public void setAno1(Float ano1) {
         this.ano1 = ano1;
     }
 
-    public Double getAno3() {
+    public Float getAno3() {
         return ano3;
     }
 
-    public void setAno3(Double ano3) {
+    public void setAno3(Float ano3) {
         this.ano3 = ano3;
     }
 
-    public Double getAno5() {
+    public Float getAno5() {
         return ano5;
     }
 
-    public void setAno5(Double ano5) {
+    public void setAno5(Float ano5) {
         this.ano5 = ano5;
     }
 
-    public Double getYTD() {
+    public Float getYTD() {
         return YTD;
     }
 
-    public void setYTD(Double YTD) {
+    public void setYTD(Float YTD) {
         this.YTD = YTD;
     }
 
