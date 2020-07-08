@@ -52,7 +52,6 @@ public class CrearCarteraActivity extends AppCompatActivity {
 
     private DatabaseReference database;
     private DatabaseReference databaseFondos;
-    private DatabaseReference data;
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
@@ -176,7 +175,7 @@ public class CrearCarteraActivity extends AppCompatActivity {
 
                 Python py = Python.getInstance();
                 PyObject pyf = py.getModule("myscript"); //fichero python
-                final PyObject obj = pyf.callAttr("test",Integer.parseInt(num_edad), Integer.parseInt(num_ingresos), Integer.parseInt(num_ahorros)); //nombre de funcion a ejecutar
+                final PyObject obj = pyf.callAttr("classification", Integer.parseInt(num_edad), Integer.parseInt(num_ingresos), Integer.parseInt(num_ahorros)); //nombre de funcion a ejecutar
 
                 databaseFondos.addValueEventListener(new ValueEventListener() {
                     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -186,12 +185,12 @@ public class CrearCarteraActivity extends AppCompatActivity {
 
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                                 fondos = postSnapshot.getValue(Fondos.class);
-                            if (fondos.getIMI() <= Long.parseLong(num_importe) && (fondos.getRiesgo() <= Long.parseLong(obj.toString()))){
+                            if (fondos.getId() == Integer.parseInt(obj.toString())){
                                 list.add(fondos);
                             }
                         }
-                        Random random = new Random();
-                        nom_fondo[0] = list.get(random.nextInt(list.size()));
+
+                        nom_fondo[0] = list.get(0);
 
                         mUser = mAuth.getCurrentUser();
 

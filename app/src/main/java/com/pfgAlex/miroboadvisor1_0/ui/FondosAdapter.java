@@ -67,7 +67,7 @@ public class FondosAdapter extends RecyclerView.Adapter<FondosAdapter.FondoViewH
 
             LineChartView lineChartView = miItem.findViewById(R.id.lineChart);
 
-            int[] axisData = {5,3,1};
+            int[] axisData = {1,3,5};
             Float[] yAxisData = {dato.getNom_fondo().getAno5(), dato.getNom_fondo().getAno3(), dato.getNom_fondo().getAno1()};
 
             List yAxisValues = new ArrayList();

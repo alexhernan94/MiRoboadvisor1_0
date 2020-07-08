@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Fondos implements Serializable {
 
+    private Integer Id;
     private String Nombre;
     private Integer Riesgo;
     private Float ano1;
@@ -17,7 +18,8 @@ public class Fondos implements Serializable {
 
     }
 
-    public Fondos(String nombre, Integer riesgo, Float ano1, Float ano3, Float ano5, Float YTD, Long IMI, String categoria) {
+    public Fondos(Integer id, String nombre, Integer riesgo, Float ano1, Float ano3, Float ano5, Float YTD, Long IMI, String categoria) {
+        Id = id;
         Nombre = nombre;
         Riesgo = riesgo;
         this.ano1 = ano1;
@@ -26,6 +28,14 @@ public class Fondos implements Serializable {
         this.YTD = YTD;
         this.IMI = IMI;
         Categoria = categoria;
+    }
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
     }
 
     public String getNombre() {
@@ -95,7 +105,8 @@ public class Fondos implements Serializable {
     @Override
     public String toString() {
         return "Fondos{" +
-                "Nombre='" + Nombre + '\'' +
+                "Id=" + Id +
+                ", Nombre='" + Nombre + '\'' +
                 ", Riesgo=" + Riesgo +
                 ", ano1=" + ano1 +
                 ", ano3=" + ano3 +
